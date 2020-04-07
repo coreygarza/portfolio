@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 const Porfolio = ({resumeData}) => {
     React.useEffect(() => {
-        axios.post('https://athanas-mailer.herokuapp.com/api/addVisitor', {name: resumeData.name})
+        axios.post('https://athanas-c-mailer.herokuapp.com/api/addVisitor', {name: resumeData.name})
         .then(res => {
             console.log(res)
         })

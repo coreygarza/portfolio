@@ -8,17 +8,13 @@ const Layout = ({path}) => {
     const [isLoaded, setLoaded] = React.useState(false);
     const [resume, setResume] = React.useState(undefined);
     React.useEffect(() => {
-        // axios.get('https://athanas-mailer.herokuapp.com/api/resume')
-        // .then(res => {
-        //     var myResume = res.data.resume[`${path}`];
-        //     console.log(myResume)
-        //     setResume(myResume);
-        //     setLoaded(true);
-        // })
-            var myResume = resumeData[`${path}`];
+        axios.get('https://athanas-c-mailer.herokuapp.com/api/resume')
+        .then(res => {
+            var myResume = res.data.resume[`${path}`];
             console.log(myResume)
             setResume(myResume);
-        setLoaded(true);
+            setLoaded(true);
+        })
     }, []);
     
     return (
